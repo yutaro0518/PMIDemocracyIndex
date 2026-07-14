@@ -18,9 +18,9 @@
 <div class="intro">
   <div class="wrap">
     <div class="eyebrow">Dozens of Countries, One Index</div>
-    <h1>世界の民主主義を、5つのカテゴリで測り、<br>0〜10の総合スコアと4つの体制類型で示す。</h1>
-    <p class="lede sans">選挙過程と多元性・政府機能・政治参加・政治文化・市民的自由の5カテゴリ（各0〜10点）を平均して総合スコアを算出し、スコアに応じて「完全な民主主義／欠陥のある民主主義／混合体制／権威主義体制」の4類型に分類します。下のスペクトラム上の点、またはスコア順の一覧から各国の5カテゴリの内訳と根拠を開けます。公開されている民主主義指標（V-Dem・Freedom House・EIU等）にもとづく暫定評価です。</p>
-    <p class="more"><a href="criteria.html">5カテゴリの採点基準と4類型の目安を見る →</a></p>
+    <h1>世界の民主主義を、5つのカテゴリで測り、<br>0〜10の総合スコアと5つの体制類型で示す。</h1>
+    <p class="lede sans">選挙過程と多元性・政府機能・政治参加・政治文化・市民的自由の5カテゴリ（各0〜10点）を平均して総合スコアを算出し、スコアに応じて「完全な民主主義／欠陥のある民主主義／混合体制／権威主義体制／全体主義体制」の5類型に分類します。下のスペクトラム上の点、またはスコア順の一覧から各国の5カテゴリの内訳と根拠を開けます。公開されている民主主義指標（V-Dem・Freedom House・EIU等）にもとづく暫定評価です。</p>
+    <p class="more"><a href="criteria.html">5カテゴリの採点基準と5類型の目安を見る →</a></p>
   </div>
 </div>
 
@@ -31,7 +31,8 @@
         <span class="lg r-full"><span class="sw"></span>完全な民主主義 <span class="rng">8.0–10</span></span>
         <span class="lg r-flawed"><span class="sw"></span>欠陥のある民主主義 <span class="rng">6.0–7.9</span></span>
         <span class="lg r-hybrid"><span class="sw"></span>混合体制 <span class="rng">4.0–5.9</span></span>
-        <span class="lg r-auth"><span class="sw"></span>権威主義体制 <span class="rng">0–3.9</span></span>
+        <span class="lg r-auth"><span class="sw"></span>権威主義体制 <span class="rng">2.5–3.9</span></span>
+        <span class="lg r-total"><span class="sw"></span>全体主義体制 <span class="rng">0–2.4</span></span>
       </div>
       <div class="spectrum-frame">
         <div class="spectrum" id="plot">
@@ -49,8 +50,8 @@
   <div class="wrap">
     <a class="f-brand" href="index.html">PMI Democracy Index</a>
     <p class="fnote sans">
-      総合スコア＝5カテゴリ［選挙過程と多元性・政府機能・政治参加・政治文化・市民的自由］（各0〜10点）の平均。8.0以上=完全な民主主義、6.0〜7.9=欠陥のある民主主義、4.0〜5.9=混合体制、4.0未満=権威主義体制。詳しくは<a href="criteria.html">採点基準の一覧</a>を参照。<br>
-      カテゴリ構成と類型は <a href="https://www.eiu.com/n/campaigns/democracy-index-2024/" target="_blank" rel="noopener">EIU Democracy Index</a> の方式にならい、スコアは <a href="https://v-dem.net/" target="_blank" rel="noopener">V-Dem</a>・<a href="https://freedomhouse.org/report/freedom-world" target="_blank" rel="noopener">Freedom House「Freedom in the World」</a>・EIU 等の公開評価を参考にした暫定的な再構成です。各機関の公式スコアそのものではなく、国際情勢により実態は変動します。本表は方法論の試験運用です。<br>
+      総合スコア＝5カテゴリ［選挙過程と多元性・政府機能・政治参加・政治文化・市民的自由］（各0〜10点）の平均。8.0以上=完全な民主主義、6.0〜7.9=欠陥のある民主主義、4.0〜5.9=混合体制、2.5〜3.9=権威主義体制、2.5未満=全体主義体制。詳しくは<a href="criteria.html">採点基準の一覧</a>を参照。<br>
+      カテゴリ構成は <a href="https://www.eiu.com/n/campaigns/democracy-index-2024/" target="_blank" rel="noopener">EIU Democracy Index</a> の方式にならい、スコアは <a href="https://v-dem.net/" target="_blank" rel="noopener">V-Dem</a>・<a href="https://freedomhouse.org/report/freedom-world" target="_blank" rel="noopener">Freedom House「Freedom in the World」</a>・EIU 等の公開評価を参考にした暫定的な再構成です。<b>類型はEIUの4類型に「全体主義体制」を加えた5段階（独自拡張）</b>で、最下層は競争的選挙が事実上存在しない閉鎖体制を指します。各機関の公式スコアそのものではなく、国際情勢により実態は変動します。本表は方法論の試験運用です。<br>
       © 2026 PMI Democracy Index — concept draft v2.
     </p>
   </div>
@@ -62,10 +63,11 @@
     full:  {lb:'完全な民主主義'},
     flawed:{lb:'欠陥のある民主主義'},
     hybrid:{lb:'混合体制'},
-    auth:  {lb:'権威主義体制'}
+    auth:  {lb:'権威主義体制'},
+    total: {lb:'全体主義体制'}
   };
   const ov=s=>Math.round(s.reduce((a,b)=>a+b,0)/5*100)/100;   // overall, 2 dp
-  const regimeOf=v=>v>=8?'full':v>=6?'flawed':v>=4?'hybrid':'auth';
+  const regimeOf=v=>v>=8?'full':v>=6?'flawed':v>=4?'hybrid':v>=2.5?'auth':'total';
 
   // s: [選挙過程と多元性, 政府機能, 政治参加, 政治文化, 市民的自由] each 0–10
   const countries=[
@@ -230,7 +232,8 @@
 
   // regime band zones (0–4 / 4–6 / 6–8 / 8–10) + labels
   const BANDS=[
-    {rg:'auth',  l:0, w:40, lb:'権威主義体制', rng:'0–4'},
+    {rg:'total', l:0,  w:25, lb:'全体主義体制', rng:'0–2.5'},
+    {rg:'auth',  l:25, w:15, lb:'権威主義体制', rng:'2.5–4'},
     {rg:'hybrid',l:40,w:20, lb:'混合体制',     rng:'4–6'},
     {rg:'flawed',l:60,w:20, lb:'欠陥のある民主主義', rng:'6–8'},
     {rg:'full',  l:80,w:20, lb:'完全な民主主義', rng:'8–10'},
