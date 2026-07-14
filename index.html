@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>World Democracy Index</title>
+<title>参画感インデックス ─ 民主主義2.0</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <div class="wrap head-inner">
-    <a class="brand" href="index.html">World Democracy <em>Index</em></a>
+    <a class="brand" href="index.html">参画感 <em>Index</em> · 民主主義2.0</a>
     <nav class="nav"><a href="criteria.html">採点基準を見る →</a></nav>
   </div>
 </header>
 
 <div class="intro">
   <div class="wrap">
-    <div class="eyebrow">Dozens of Countries, One Index</div>
-    <h1>世界の民主主義を、5つのカテゴリで測り、<br>0〜10の総合スコアと4つの体制類型で示す。</h1>
-    <p class="lede sans">選挙過程と多元性・政府機能・政治参加・政治文化・市民的自由の5カテゴリ（各0〜10点）を平均して総合スコアを算出し、スコアに応じて「完全な民主主義／欠陥のある民主主義／混合体制／権威主義体制」の4類型に分類します。下のスペクトラム上の点、またはスコア順の一覧から各国の5カテゴリの内訳と根拠を開けます。公開されている民主主義指標（V-Dem・Freedom House・EIU等）にもとづく暫定評価です。</p>
-    <p class="more"><a href="criteria.html">5カテゴリの採点基準と4類型の目安を見る →</a></p>
+    <div class="eyebrow">Sense of Agency · Democracy 2.0</div>
+    <h1>政治を「自分ごと」にできているか。<br>仕組みと価値観の18指標で、参画感を測る。</h1>
+    <p class="lede sans">「自分が政治を動かしている」「政治が自分たちの悩みごとを話し合っている」と感じられる度合い＝<b>参画感</b>を、A. システム（仕組み・9項目）とB. 思想・価値観（9項目）の計18指標（各0〜10点）の平均で採点します。スペクトラム上の点、またはスコア順の一覧から各事例の内訳と総評を開けます。C. 診断・症状（8項目）は、参画感が低い状態を示す観測変数として下に別掲します。</p>
+    <p class="more"><a href="criteria.html">A・B・Cの各指標と参画感の水準の目安を見る →</a></p>
   </div>
 </div>
 
@@ -28,212 +28,138 @@
   <div class="wrap">
     <div class="plot-card">
       <div class="legend sans">
-        <span class="lg r-full"><span class="sw"></span>完全な民主主義 <span class="rng">8.0–10</span></span>
-        <span class="lg r-flawed"><span class="sw"></span>欠陥のある民主主義 <span class="rng">6.0–7.9</span></span>
-        <span class="lg r-hybrid"><span class="sw"></span>混合体制 <span class="rng">4.0–5.9</span></span>
-        <span class="lg r-auth"><span class="sw"></span>権威主義体制 <span class="rng">0–3.9</span></span>
+        <span class="lg r-full"><span class="sw"></span>参画感が確立 <span class="rng">8–10</span></span>
+        <span class="lg r-flawed"><span class="sw"></span>育ちつつある <span class="rng">6–8</span></span>
+        <span class="lg r-hybrid"><span class="sw"></span>乏しい <span class="rng">4–6</span></span>
+        <span class="lg r-auth"><span class="sw"></span>欠如（診断対象） <span class="rng">0–4</span></span>
       </div>
       <div class="spectrum-frame">
         <div class="spectrum" id="plot">
           <div class="tip" id="tip" role="tooltip"></div>
         </div>
-        <div class="xlabel sans">民主主義スコア（0〜10）　→</div>
+        <div class="xlabel sans">参画感スコア（A＋B 18指標の平均・0〜10）　→</div>
       </div>
-      <div class="ranklist-h sans">総合スコアの高い順（クリックで採点の根拠を表示）</div>
+      <div class="ranklist-h sans">参画感スコアの高い順（クリックで採点の根拠を表示）</div>
       <div class="ranklist" id="ranklist" role="list"></div>
     </div>
+
+    <div class="diag sans" id="diag"></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <a class="f-brand" href="index.html">World Democracy Index</a>
+    <a class="f-brand" href="index.html">参画感 Index · 民主主義2.0</a>
     <p class="fnote sans">
-      総合スコア＝5カテゴリ［選挙過程と多元性・政府機能・政治参加・政治文化・市民的自由］（各0〜10点）の平均。8.0以上=完全な民主主義、6.0〜7.9=欠陥のある民主主義、4.0〜5.9=混合体制、4.0未満=権威主義体制。詳しくは<a href="criteria.html">採点基準の一覧</a>を参照。<br>
-      カテゴリ構成と類型は <a href="https://www.eiu.com/n/campaigns/democracy-index-2024/" target="_blank" rel="noopener">EIU Democracy Index</a> の方式にならい、スコアは <a href="https://v-dem.net/" target="_blank" rel="noopener">V-Dem</a>・<a href="https://freedomhouse.org/report/freedom-world" target="_blank" rel="noopener">Freedom House「Freedom in the World」</a>・EIU 等の公開評価を参考にした暫定的な再構成です。各機関の公式スコアそのものではなく、国際情勢により実態は変動します。本表は方法論の試験運用です。<br>
-      © 2026 World Democracy Index — concept draft v2.
+      参画感スコア＝A. システム（A1〜A9）＋B. 思想・価値観（B1〜B9）の計18指標（各0〜10点）の平均。8.0以上=参画感が確立、6.0〜7.9=育ちつつある、4.0〜5.9=乏しい、4.0未満=欠如（診断対象）。C. 診断・症状（C1〜C8）は低スコア側の観測変数として別掲。各指標の定義は<a href="criteria.html">採点基準の一覧</a>を参照。<br>
+      指標体系（A/B/C）は「参画感型民主主義（民主主義2.0）」の構想メモにもとづき、括弧内は同メモのページ参照です。各事例のスコアは、その構想の観点から見た<b>概念的・暫定的な相対評価</b>であり、V-Dem・EIU等の公式指標や各国・各取組みの公称値ではありません。C群の数値は日本の各種世論調査で示された傾向にもとづく記述です。本表は方法論の試験運用です。<br>
+      © 2026 参画感 Index — concept draft v3.
     </p>
   </div>
 </footer>
 
 <script>
-  const CATS=['選挙過程と多元性','政府機能','政治参加','政治文化','市民的自由'];
-  const REG={
-    full:  {lb:'完全な民主主義'},
-    flawed:{lb:'欠陥のある民主主義'},
-    hybrid:{lb:'混合体制'},
-    auth:  {lb:'権威主義体制'}
+  const A_ITEMS=[
+    ['A1','参画回路の多様性'],['A2','参加コストの低さ'],['A3','情報環境の複雑性縮減'],
+    ['A4','透明性・可視性'],['A5','意思決定のボトムアップ度'],['A6','困りごとの顕在化チャンス'],
+    ['A7','困りごとを政策に反映するプロセス'],['A8','参加能力の基盤（脱商品化）'],['A9','政治参加の拡張的把握']
+  ];
+  const B_ITEMS=[
+    ['B1','参画感（agency）'],['B2','政治と生活の接続実感'],['B3','価値観の多元性'],
+    ['B4','異なる価値観への包摂的態度'],['B5','個人の幸福追求の尊重'],['B6','他者の幸福の尊重'],
+    ['B7','対立を越える上位理念の共有'],['B8','不正義の是正'],['B9','長期主義']
+  ];
+  const TIER={
+    full:  {lb:'参画感が確立'},
+    flawed:{lb:'育ちつつある'},
+    hybrid:{lb:'参画感が乏しい'},
+    auth:  {lb:'参画感の欠如'}
   };
-  const ov=s=>Math.round(s.reduce((a,b)=>a+b,0)/5*100)/100;   // overall, 2 dp
-  const regimeOf=v=>v>=8?'full':v>=6?'flawed':v>=4?'hybrid':'auth';
+  const tierOf=v=>v>=8?'full':v>=6?'flawed':v>=4?'hybrid':'auth';
+  const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;
 
-  // s: [選挙過程と多元性, 政府機能, 政治参加, 政治文化, 市民的自由] each 0–10
-  const countries=[
-   {id:'nor',name:'ノルウェー',kind:'北欧・議会制',s:[10.0,9.6,10.0,10.0,9.4],
-    r:['複数政党が競う自由で公正な選挙が完全に定着し、選挙運営への信頼も世界最上位。',
-       '<b>汚職が世界最小水準</b>で、透明性が高く実効的な統治。政策決定への信頼が厚い。',
-       '高い投票率と厚い政党・組合参加で、市民の政治関与が広い。',
-       '民主主義への支持が社会に深く根づき、合意形成の文化が強い。',
-       '表現・報道・信教の自由が完全に保障され、報道自由度は世界最上位級。']},
-   {id:'swe',name:'スウェーデン',kind:'北欧・議会制',s:[9.6,9.6,8.9,9.4,9.6],
-    r:['長く安定した比例代表選挙が定着し、公正性への信頼が極めて高い。',
-       '<b>公文書公開の伝統</b>に支えられた透明で実効的な統治。',
-       '参加は活発だが、近年は一部で政治的分極化の兆しも。',
-       '民主的価値への支持が広く根づく。',
-       '世界最古級の出版の自由の伝統を持ち、報道環境は最上位級。']},
-   {id:'dnk',name:'デンマーク',kind:'北欧・議会制',s:[10.0,9.3,8.9,9.4,9.4],
-    r:['安定した多党制と公正な選挙。',
-       '<b>汚職認識指数で常に世界最上位</b>の清廉で実効的な統治。',
-       '高い投票率と活発な市民参加。',
-       '強い民主的合意文化。',
-       '報道・表現の自由が広く、メディアの多元性が高い。']},
-   {id:'twn',name:'台湾',kind:'東アジア・半大統領制',s:[10.0,8.9,7.8,8.1,9.7],
-    r:['活発な政権交代を伴う<b>自由で公正な選挙</b>がアジア最高水準で定着。',
-       '統治は実効的だが、大陸からの圧力が政策環境に緊張を与える。',
-       '社会運動が活発で市民参加が旺盛。',
-       '民主主義への支持が世代を超えて強い。',
-       'アジア屈指の報道の自由と多様なメディア。']},
-   {id:'deu',name:'ドイツ',kind:'欧州・連邦制／議会制',s:[9.6,8.6,8.3,7.5,9.4],
-    r:['自由で公正な連邦・州選挙が安定的に実施される。',
-       '連邦制と強い行政機構による実効的で説明責任のある統治。',
-       '参加は堅調だが、投票権のない移民人口が一定規模。',
-       '極右の台頭など一部で分極化の兆し。',
-       '報道は自由だが、ヘイトスピーチ規制など一定の法的枠組みがある。']},
-   {id:'gbr',name:'イギリス',kind:'欧州・議会制',s:[9.6,7.5,8.3,7.5,8.5],
-    r:['公正な選挙だが、<b>小選挙区制による得票と議席の乖離</b>が論点。',
-       '実効的統治だが、近年は制度的安定への懸念も。',
-       '参加は堅調で、多様な代表が進む。',
-       '民主的伝統は強いが、Brexit後の社会的分断も残る。',
-       '活発な報道だが、メディア所有の集中と抗議規制強化への懸念。']},
-   {id:'jpn',name:'日本',kind:'東アジア・議会制',s:[8.8,8.6,6.7,8.1,8.2],
-    r:['自由で公正な選挙が安定し、政権交代の実績もある。',
-       '実効的な行政だが、<b>長期一党優位で説明責任がやや弱い</b>との指摘。',
-       '投票率の低下と女性・若年層の参画の遅れが課題。',
-       '民主主義は定着するが、政治参加への関心はやや低調。',
-       '報道の自由は保障されるが、記者クラブ制度等で国際順位はやや低め。']},
-   {id:'kor',name:'韓国',kind:'東アジア・大統領制',s:[9.6,8.2,7.2,7.5,7.6],
-    r:['競争的で公正な選挙と活発な政権交代。',
-       '統治は実効的だが、大統領をめぐる政治対立が激しい。',
-       'ろうそく集会に象徴される<b>活発な市民参加</b>。',
-       '民主主義への強い支持があるが、分極化が深い。',
-       '報道の自由は高まったが、名誉毀損法とメディアの分極化が課題。']},
-   {id:'fra',name:'フランス',kind:'欧州・半大統領制',s:[9.6,7.5,7.8,6.9,8.2],
-    r:['自由で公正な大統領・議会選挙が定着。',
-       '強い大統領権限のもと統治の実効性は高いが、行政府が優越しがち。',
-       '<b>抗議・ストの伝統</b>が濃く、市民参加が活発。',
-       '分極化と一部の民主主義不信が課題。',
-       '報道の自由は高いが、メディア所有集中の課題。']},
-   {id:'usa',name:'アメリカ合衆国',kind:'北米・大統領制／連邦制',s:[9.2,6.4,8.9,6.3,8.5],
-    r:['自由な選挙だが、<b>区割操作・投票制限・不正主張</b>が公正性への信頼を損なう。',
-       '政治的分極化と機能不全（政府閉鎖等）が統治の実効性を弱める。',
-       '活発な市民参加と高い政治的関心。',
-       '深刻な分極化が政治文化を蝕む。',
-       '憲法修正第1条に支えられた強い言論・報道の自由。']},
-   {id:'ind',name:'インド',kind:'南アジア・議会制／連邦制',s:[8.7,7.5,7.2,5.6,6.8],
-    r:['世界最大の選挙が実施されるが、<b>与党優位下での公平性</b>への懸念が高まる。',
-       '実効的な行政だが、独立機関・司法への圧力が指摘される。',
-       '巨大な選挙参加。',
-       '多元的伝統はあるが、宗教的分断が強まる。',
-       '報道の自由度が低下し、NGO規制で市民社会空間が縮小。']},
-   {id:'zaf',name:'南アフリカ',kind:'アフリカ・議会制',s:[7.4,6.4,8.3,5.0,7.9],
-    r:['アパルトヘイト後の<b>自由で公正な選挙</b>が定着し、2024年に連立へ移行。',
-       '汚職（state capture）と統治能力の低下が実効性を損なう。',
-       '高い政治参加と活発な市民社会。',
-       '民主的価値は根づくが、制度への幻滅も広がる。',
-       '高い報道の自由と活発な調査報道。']},
-   {id:'pol',name:'ポーランド',kind:'欧州・議会制',s:[9.2,5.7,6.7,6.3,7.1],
-    r:['競争的で公正な選挙が機能し、2023年に政権交代。',
-       '前政権下で進んだ<b>司法独立性の侵食</b>の修復が課題で、実効性は回復途上。',
-       '参加は活発。',
-       '価値観をめぐる社会の分断が深い。',
-       '公共放送の政治化からの改善途上。']},
-   {id:'bra',name:'ブラジル',kind:'南米・大統領制／連邦制',s:[9.6,5.0,6.1,6.3,6.5],
-    r:['電子投票を含む<b>公正な選挙</b>が機能し、平和的移行を維持。',
-       '汚職・暴力・統治の非効率が実効性を損なう。',
-       '義務投票で高い参加だが、不平等が実質を制約。',
-       '民主主義は定着も、制度攻撃の局面があった。',
-       '自由な報道だが、ジャーナリストへの攻撃と偽情報の課題。']},
-   {id:'idn',name:'インドネシア',kind:'東南アジア・大統領制',s:[7.9,7.1,7.2,4.4,5.9],
-    r:['世界最大級の民主的選挙を定期実施し、政権交代の実績もある。',
-       '大統領権限が強く、<b>汚職対策機関（KPK）の弱体化</b>が指摘される。',
-       '参加は活発。',
-       '多様性を抱えるが、宗教的保守化の圧力がある。',
-       '名誉毀損・冒涜法による報道の萎縮が指摘される。']},
-   {id:'hun',name:'ハンガリー',kind:'欧州・議会制',s:[7.0,6.1,5.6,6.9,6.8],
-    r:['選挙は行われるが、<b>与党に極端に有利な制度・メディア環境</b>で公正性が損なわれる。',
-       '縁故主義と独立機関の掌握で統治の説明責任が弱い。',
-       '選挙参加はある。',
-       'ナショナリズムと反リベラルの政治文化。',
-       'メディアの大半が政権寄りに再編され、報道の多元性が縮小。']},
-   {id:'sgp',name:'シンガポール',kind:'東南アジア・議会制（一党優位）',s:[4.8,7.9,5.0,6.9,6.5],
-    r:['定期選挙はあるが、<b>与党に有利な制度</b>で競争が構造的に制約される。',
-       '極めて清廉で実効的な統治で、政府機能は高評価。',
-       '政治参加は制度化されるが限定的。',
-       '実利志向で安定を重んじる政治文化。',
-       '名誉毀損訴訟・偽情報法（POFMA）で報道・言論が制約される。']},
-   {id:'tha',name:'タイ',kind:'東南アジア・立憲君主制',s:[7.0,5.4,6.7,5.0,5.3],
-    r:['選挙は実施されるが、<b>軍が起草した憲法・任命上院</b>が結果を歪める。',
-       '軍・官僚の影響で統治の説明責任が弱い。',
-       '若者を中心に参加要求は強い。',
-       '王室・軍と民主派の対立が続く。',
-       '不敬罪・コンピュータ犯罪法で言論・報道が強く萎縮。']},
-   {id:'mex',name:'メキシコ',kind:'北米・大統領制／連邦制',s:[6.9,4.6,7.2,3.1,4.4],
-    r:['競争的選挙と政権交代はあるが、選挙管理機関への攻撃と暴力。',
-       '<b>汚職・組織犯罪・不処罰</b>が統治を深く損なう。',
-       '参加はあるが暴力が抑圧する。',
-       '制度不信が根強い政治文化。',
-       'ジャーナリストへの暴力が世界最悪水準で萎縮が深刻。']},
-   {id:'tur',name:'トルコ',kind:'中東・大統領制',s:[3.5,5.4,5.6,5.0,2.9],
-    r:['選挙は競争的だが、<b>資源・メディアの与党集中</b>で著しく不公平な土俵。',
-       '大統領への権力集中で抑制と均衡が失われた。',
-       '参加はあるが、クルド系など少数者が政治的に排除される。',
-       '分極化と権威主義的傾向が強まる。',
-       'ジャーナリストの大量拘束など報道の自由が世界最悪水準。']},
-   {id:'ven',name:'ベネズエラ',kind:'南米・大統領制',s:[2.2,1.4,5.0,3.8,1.8],
-    r:['選挙は<b>結果操作・野党候補の排除</b>で自由でも公正でもないとの国際評価。',
-       '統治が事実上崩壊し、深刻な経済危機と大量流出が続く。',
-       '抗議は続くが厳しく弾圧される。',
-       '二極化と制度への根深い不信。',
-       '独立メディアがほぼ排除され、報道の自由が著しく制限される。']},
-   {id:'rus',name:'ロシア',kind:'ユーラシア・大統領制',s:[2.2,1.1,3.9,2.5,1.2],
-    r:['形式的選挙で<b>反対派を排除</b>し、競争性を欠く。',
-       '権力が大統領に極度に集中し、抑制と均衡が存在しない。',
-       '参加は名目的で、反対の意思表示が刑事訴追の対象になる。',
-       '権威主義的統制を受け入れる政治文化。',
-       '独立メディアが弾圧・国外追放され、<b>報道の自由がほぼ消滅</b>。']},
-   {id:'chn',name:'中国',kind:'東アジア・一党支配',s:[0.0,3.6,2.8,3.1,1.2],
-    r:['全国レベルの<b>競争的普通選挙が存在しない</b>一党支配。',
-       '党が統制する実効的な行政で、内部の制度化は一定程度ある。',
-       '協議民主を掲げるが、実質的な政治参加はない。',
-       '党への従属を軸とする政治文化。',
-       '報道・ネットが厳格に検閲され、独立した言論空間がほぼない。']},
-   {id:'sau',name:'サウジアラビア',kind:'中東・絶対君主制',s:[0.0,3.2,2.2,3.1,1.8],
-    r:['国政の<b>競争的選挙が存在しない</b>絶対君主制。',
-       '王室主導の統治。近代化は進むが説明責任の仕組みはない。',
-       '独立した政治参加が事実上ない。',
-       '部族・王室を中心とする伝統的政治文化。',
-       '報道は国家統制下にあり、批判は厳しく処罰される。']},
-   {id:'prk',name:'北朝鮮',kind:'東アジア・全体主義体制',s:[0.0,2.5,1.7,1.3,0.0],
-    r:['単一候補・信任型の<b>形骸化した「選挙」</b>で選択肢がない。',
-       '権力が首領に絶対的に集中する統治。',
-       '自由な政治参加が一切存在しない。',
-       '全体主義的な個人崇拝の政治文化。',
-       'メディアが完全に国家統制下にあり、外部情報が遮断される。']},
+  // A / B each 0–10 per item; na / nb are the group 総評.
+  const cases=[
+   {id:'ideal',name:'民主主義2.0の理想像',kind:'参画感型民主主義の到達像（参照）',
+    A:[10,10,9,10,10,9,9,9,9],B:[10,10,9,9,10,9,9,9,9],
+    na:'選挙以外の多様な参画回路が低コストで開かれ、GovTech/PoliTechが情報の複雑性を縮減する。徹底してボトムアップで、生活の<b>困りごとが顕在化し政策へ接続</b>され、脱商品化が参加の余白を保障する到達像。',
+    nb:'一人ひとりが「政治を動かしている」という<b>参画感</b>を持ち、多元的な価値が包摂される。個人と他者の幸福追求が両立し、上位理念のもとで不正義を是正、長期主義が将来世代への禍根を避ける。'},
+
+   {id:'twn',name:'台湾',kind:'デジタル民主主義（vTaiwan・Join・数位発展部）',
+    A:[9,8,9,9,8,7,7,6,9],B:[8,7,9,9,8,8,7,7,7],
+    na:'vTaiwanやJoinプラットフォーム、<b>ブロードリスニング（Polis）</b>が選挙外の参画回路と「拡張的把握」を実装し、透明性も高い。困りごと→政策の接続も進むが、脱商品化の基盤はなお発展途上。',
+    nb:'開かれた熟議文化のもとで価値の多元性と包摂が高く、市民の参画感が育つ。対立を越える上位理念の共有と長期主義は、これからの深化課題。'},
+
+   {id:'nordic',name:'北欧モデル',kind:'福祉国家型（デンマーク等・脱商品化）',
+    A:[7,7,6,9,7,7,7,9,6],B:[8,8,8,8,8,8,8,8,8],
+    na:'高い透明性に加え、<b>福祉による脱商品化（A8）</b>が勤労世代に政治へ関わる余白と安心感を強く与える。参画回路や新技術による複雑性縮減にはさらに拡張の余地。',
+    nb:'強い参画感・包摂・長期主義・不正義の是正がそろい、<b>価値面が突出</b>する。政治の存在意義を個人の幸福に置く思想が社会に根づく。'},
+
+   {id:'est',name:'エストニア',kind:'電子政府型（e-Estonia・i-Voting）',
+    A:[7,10,9,9,6,6,6,6,7],B:[7,7,7,7,7,7,6,6,7],
+    na:'e-Estonia／i-Votingで<b>参加コストが極小化</b>し、X-Road等が情報処理の複雑性を大幅に縮減、透明性も高い。一方でボトムアップの意思決定や困りごとの汲み上げは行政主導寄り。',
+    nb:'効率的な行政への信頼はあるが、参画感や価値の多元性・包摂は、制度の効率ほどには前面に出ていない。'},
+
+   {id:'irl',name:'アイルランド',kind:'熟議民主主義（市民議会 Citizens’ Assembly）',
+    A:[7,6,5,7,9,7,8,6,5],B:[7,7,8,8,7,7,8,7,7],
+    na:'無作為抽出の<b>市民議会</b>による徹底したボトムアップと、困りごと→国民投票→政策の接続が際立つ。日常的な参加コストの縮減や拡張的把握は限定的。',
+    nb:'熟議を通じて対立を越える上位理念を形成し、多元性と包摂が高い。参画感も熟議に加わった市民を中心に育つ。'},
+
+   {id:'che',name:'スイス',kind:'直接民主制（国民投票・イニシアティブ）',
+    A:[8,5,4,7,9,6,7,6,4],B:[7,7,7,6,7,6,6,6,6],
+    na:'国民投票・イニシアティブという<b>直接的な参画回路とボトムアップ性</b>が最大級。一方、頻繁な投票の負担でコストは中程度、GovTechによる縮減や拡張的把握は弱い。',
+    nb:'直接民主の伝統が政治と生活の接続実感を支えるが、多元性・包摂・長期主義は中程度にとどまる。'},
+
+   {id:'kor',name:'韓国',kind:'活発な市民運動＋デジタル行政',
+    A:[6,6,6,6,5,6,5,5,6],B:[6,6,6,4,6,5,4,6,5],
+    na:'活発な市民運動とデジタル行政で一定の参画回路と透明性はあるが、意思決定はなお中央主導で、困りごとの制度的な接続は限定的。',
+    nb:'参画感はあるが、<b>深い分極化</b>が異なる価値観への包摂と上位理念の共有を損なう。'},
+
+   {id:'usa',name:'アメリカ合衆国',kind:'参加は活発だが分断が深い',
+    A:[7,6,6,7,5,6,5,4,7],B:[6,6,7,3,7,4,3,4,4],
+    na:'強い言論の自由と多様な参画回路を持つが、<b>脱商品化の弱さ</b>とボトムアップの制度化不足が参加の実質を削ぐ。',
+    nb:'個人の自由は強い一方、<b>極端な分極化</b>が異なる価値観への包摂と上位理念の共有を崩し、不正義の是正や長期主義も後退している。'},
+
+   {id:'jpn',name:'日本の現状',kind:'現状（診断対象・C群参照）',
+    A:[3,3,3,4,3,3,3,4,3],B:[2,3,5,5,5,5,4,4,4],
+    na:'政治との接点が<b>ほぼ選挙に限られ</b>、手続き的・認知的コストが高く「政治に関わるのはめんどくさい」が解消されない。情報の複雑性は個人に転嫁され、意思決定はトップダウン。困りごとの顕在化・政策接続の回路が乏しく、勤労世代に参加の余白がない。',
+    nb:'「政治を通して社会を変えられると思わない」が<b>約7割</b>で参画感が決定的に不足し、政治と生活の接続実感も薄い。多元性・包摂は一定あるが、上位理念の共有や長期主義は弱い（下のC群の症状を参照）。'},
   ];
 
-  countries.forEach((o,i)=>{ o._i=i; o._ov=ov(o.s); o._rg=regimeOf(o._ov); });
+  const SYMPTOMS=[
+   {code:'C1',fig:'約7割',lb:'有効性感覚なし',name:'政治的有効性感覚の欠如',
+    txt:'「政治を通して社会を変えられると思わない」人が約7割。<b>参画感（B1）</b>の欠如が数字に表れる。',pg:'p.4'},
+   {code:'C2',fig:'75%超',lb:'恩恵の非実感',name:'政治への不信・恩恵の非実感',
+    txt:'税負担に見合うサービスを受けていないという感覚が75%超。<b>政治と生活の接続実感（B2）</b>の薄さ。',pg:'p.5–6'},
+   {code:'C3',fig:'世代差',lb:'重要性認識',name:'政治の重要性認識の世代差',
+    txt:'生命・財産に対する政治の役割を重要と見る度合いに、世代間の差がある。',pg:'p.7–8'},
+   {code:'C4',fig:'「特にない」',lb:'支持政党',name:'支持政党の不在',
+    txt:'支持政党が「特にない」とする割合が高く、政治との結びつきが希薄。',pg:'p.8'},
+   {code:'C5',fig:'過半',lb:'信条なし',name:'政治信条の不在・不明',
+    txt:'「特に政治信条はない／分からない」が過半。<b>価値観の多元性（B3）</b>の前提が育ちにくい。',pg:'p.9'},
+   {code:'C6',fig:'重複',lb:'対立軸不可視',name:'関心アジェンダの非分散',
+    txt:'支持政党を問わず関心分野が重複し、対立軸が見えにくい。',pg:'p.10–11'},
+   {code:'C7',fig:'タコつぼ化',lb:'エコーチェンバー',name:'エコーチェンバー／フィルターバブル',
+    txt:'身内での盛り上がりと相互批判・排斥。<b>異なる価値観への包摂（B4）</b>を損なう。',pg:'p.9, p.23'},
+   {code:'C8',fig:'世代差',lb:'帰属感',name:'国家への帰属感の希薄さ',
+    txt:'「日本を誇る国にしたい」等に世代間格差。「国のため」ナラティブが効かず、<b>個人の幸福（B5）</b>起点への転換を要する根拠。',pg:'p.14–17'},
+  ];
+
+  cases.forEach((o,i)=>{
+    o._i=i; o._a=Math.round(mean(o.A)*100)/100; o._b=Math.round(mean(o.B)*100)/100;
+    o._ov=Math.round(mean(o.A.concat(o.B))*100)/100; o._t=tierOf(o._ov);
+  });
 
   const plot=document.getElementById('plot');
   const ranklist=document.getElementById('ranklist');
   const tip=document.getElementById('tip');
   const dots={};
 
-  // regime band zones (0–4 / 4–6 / 6–8 / 8–10) + labels
   const BANDS=[
-    {rg:'auth',  l:0, w:40, lb:'権威主義体制', rng:'0–4'},
-    {rg:'hybrid',l:40,w:20, lb:'混合体制',     rng:'4–6'},
-    {rg:'flawed',l:60,w:20, lb:'欠陥のある民主主義', rng:'6–8'},
-    {rg:'full',  l:80,w:20, lb:'完全な民主主義', rng:'8–10'},
+    {rg:'auth',  l:0, w:40, lb:'欠如',   rng:'0–4'},
+    {rg:'hybrid',l:40,w:20, lb:'乏しい', rng:'4–6'},
+    {rg:'flawed',l:60,w:20, lb:'育成中', rng:'6–8'},
+    {rg:'full',  l:80,w:20, lb:'確立',   rng:'8–10'},
   ];
   BANDS.forEach(b=>{
     const z=document.createElement('div');
@@ -242,7 +168,6 @@
     z.innerHTML=`<div class="band-lb sans">${b.lb}<small>${b.rng}</small></div>`;
     plot.appendChild(z);
   });
-  // x ticks 0..10
   for(let v=0;v<=10;v+=2){
     const t=document.createElement('span');
     t.className='stick sans'; t.textContent=v;
@@ -250,22 +175,22 @@
   }
 
   function showTip(o,d){
-    tip.className='tip show r-'+o._rg;
+    tip.className='tip show r-'+o._t;
     tip.innerHTML=`<div class="t-name">${o.name}</div><div class="t-kind">${o.kind}</div>
-      <div class="t-score"><b>${o._ov.toFixed(2)}</b><span class="rg">${REG[o._rg].lb}</span></div>`;
+      <div class="t-score"><b>${o._ov.toFixed(2)}</b><span class="rg">${TIER[o._t].lb}</span></div>`;
     const x=d.offsetLeft, y=d.offsetTop;
-    tip.style.left=Math.min(Math.max(x,90),plot.clientWidth-90)+'px';
+    tip.style.left=Math.min(Math.max(x,100),plot.clientWidth-100)+'px';
     if(y<96){ tip.style.top=(y+18)+'px'; tip.style.transform='translateX(-50%)'; }
     else{ tip.style.top=(y-16)+'px'; tip.style.transform='translate(-50%,-100%)'; }
   }
   const hideTip=()=>tip.classList.remove('show');
 
-  countries.forEach((o,i)=>{
+  cases.forEach((o,i)=>{
     const d=document.createElement('div');
-    d.className='sdot r-'+o._rg;
+    d.className='sdot r-'+o._t;
     d.style.left=(o._ov/10*100)+'%';
     d.setAttribute('role','button'); d.setAttribute('tabindex','0');
-    d.setAttribute('aria-label',`${o.name} 総合${o._ov.toFixed(2)} ${REG[o._rg].lb}`);
+    d.setAttribute('aria-label',`${o.name} 参画感${o._ov.toFixed(2)} ${TIER[o._t].lb}`);
     d.innerHTML=`<div class="pt"></div><div class="tag sans">${o.name}</div>`;
     d.addEventListener('click',()=>openFromDot(i));
     d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openFromDot(i);}});
@@ -276,17 +201,16 @@
     plot.appendChild(d); dots[i]=d;
   });
 
-  // Ranked accordion, sorted by overall score descending.
-  countries.map((o,i)=>i)
-    .sort((a,b)=>(countries[b]._ov-countries[a]._ov)||(a-b))
+  cases.map((o,i)=>i)
+    .sort((a,b)=>(cases[b]._ov-cases[a]._ov)||(a-b))
     .forEach((i,rank)=>{
-      const o=countries[i];
+      const o=cases[i];
       const wrap=document.createElement('div');
       wrap.className='rank-item-wrap';
       wrap.innerHTML=`<button class="rank-item" aria-expanded="false">
           <span class="rank-no sans">${String(rank+1).padStart(2,'0')}</span>
           <span class="rank-main"><span class="rank-name">${o.name}</span><span class="rank-kind sans">${o.kind}</span></span>
-          <span class="rank-badge sans r-${o._rg}">${REG[o._rg].lb}</span>
+          <span class="rank-badge sans r-${o._t}">${TIER[o._t].lb}</span>
           <span class="rank-score sans">${o._ov.toFixed(2)}<small> /10</small></span>
           <span class="rank-caret" aria-hidden="true"></span>
         </button>
@@ -296,28 +220,46 @@
       o._tab=wrap;
     });
 
+  function itemsHTML(items,scores){
+    return items.map((it,idx)=>{
+      const sc=scores[idx], t=tierOf(sc);
+      return `<div class="item-row"><span class="item-code sans">${it[0]}</span>
+        <span class="item-name sans">${it[1]}</span>
+        <span class="item-meterwrap"><div class="meter"><div class="meter-fill r-${t}" style="width:${sc*10}%"></div></div>
+        <span class="cat-num sans">${sc.toFixed(1)}</span></span></div>`;
+    }).join('');
+  }
   function detailHTML(o){
-    let h=`<div class="detail-lead r-${o._rg}">
-      <span class="big">${o._ov.toFixed(2)}<small> / 10</small></span>
-      <span class="rank-badge sans r-${o._rg}">${REG[o._rg].lb}</span>
-      <span class="note">EIU方式：5カテゴリ（各0〜10）の平均</span></div>`;
-    CATS.forEach((c,idx)=>{
-      const sc=o.s[idx], rg=regimeOf(sc);
-      h+=`<div class="cat-row"><div class="cat-top">
-          <div class="cat-name sans">${c}</div>
-          <div class="cat-meterwrap"><div class="meter"><div class="meter-fill r-${rg}" style="width:${sc*10}%"></div></div>
-          <div class="cat-num sans">${sc.toFixed(1)}</div></div></div>
-        <div class="cat-rationale sans">${o.r[idx]}</div></div>`;
-    });
-    return h;
+    return `<div class="detail-lead r-${o._t}">
+        <span class="big">${o._ov.toFixed(2)}<small> / 10</small></span>
+        <span class="rank-badge sans r-${o._t}">${TIER[o._t].lb}</span>
+        <span class="subs sans"><span>A 仕組み <b>${o._a.toFixed(1)}</b></span><span>B 価値観 <b>${o._b.toFixed(1)}</b></span></span>
+        <span class="note">18指標（各0〜10）の平均</span></div>
+      <div class="grp-h sans"><span><span class="gtag">A</span>　システム（仕組み）</span><span class="gavg">9項目平均 <b>${o._a.toFixed(1)}</b> / 10</span></div>
+      <div class="grp-note sans">${o.na}</div>
+      ${itemsHTML(A_ITEMS,o.A)}
+      <div class="grp-h sans"><span><span class="gtag">B</span>　思想・価値観</span><span class="gavg">9項目平均 <b>${o._b.toFixed(1)}</b> / 10</span></div>
+      <div class="grp-note sans">${o.nb}</div>
+      ${itemsHTML(B_ITEMS,o.B)}`;
   }
 
-  // Beeswarm: dots at x=score, stacked upward into rows to avoid overlap.
+  // C diagnosis card
+  (function(){
+    const d=document.getElementById('diag');
+    let h=`<div class="dh">C　診断・症状 — 参画感が低い状態を示す観測変数（主に日本の現状）</div>
+      <div class="dlede">これらは原案では「問題の記述」として現れますが、指標としては<b>低スコア側の観測変数</b>になりえます。上のランキングで「日本の現状」が診断対象（欠如）に位置する背景です。</div>`;
+    SYMPTOMS.forEach(s=>{
+      h+=`<div class="sym"><div class="fig">${s.fig}<small>${s.code}</small></div>
+        <div class="txt"><span class="sn">${s.name}</span>　${s.txt} <span class="pg">（${s.pg}）</span></div></div>`;
+    });
+    d.innerHTML=h;
+  })();
+
   function layoutBeeswarm(){
     const W=plot.clientWidth; if(!W) return;
-    const SEP=26, rowH=25, baseB=12;
+    const SEP=30, rowH=25, baseB=12;
     const rows=[];
-    countries.slice().sort((a,b)=>a._ov-b._ov).forEach(o=>{
+    cases.slice().sort((a,b)=>a._ov-b._ov).forEach(o=>{
       const xpx=o._ov/10*W;
       let r=0;
       while(true){
@@ -325,20 +267,17 @@
         if(arr.every(px=>Math.abs(px-xpx)>=SEP)){ arr.push(xpx); break; }
         r++;
       }
-      o._row=r;
       const d=dots[o._i];
       d.style.bottom=(baseB+r*rowH)+'px';
       d.style.transform='translate(-50%,50%)';
     });
     layoutLabels();
   }
-
-  // Persistent labels only where they don't overlap; others revealed on hover.
   function layoutLabels(){
     const pr=plot.getBoundingClientRect(); if(!pr.width) return;
     const rel=el=>{const r=el.getBoundingClientRect();return{l:r.left-pr.left,t:r.top-pr.top,r:r.right-pr.left,b:r.bottom-pr.top};};
-    const order=countries.map((o,i)=>i).sort((a,b)=>countries[b]._ov-countries[a]._ov);
-    countries.forEach((o,i)=>dots[i].querySelector('.tag').classList.remove('hidden'));
+    const order=cases.map((o,i)=>i).sort((a,b)=>cases[b]._ov-cases[a]._ov);
+    cases.forEach((o,i)=>dots[i].querySelector('.tag').classList.remove('hidden'));
     const placed=[]; const pad=3;
     order.forEach(i=>{
       const tag=dots[i].querySelector('.tag');
@@ -347,11 +286,9 @@
       if(hit) tag.classList.add('hidden'); else placed.push(box);
     });
   }
-
-  // Accordion open/close. Single-open.
   function toggle(i){
-    const wrap=countries[i]._tab, willOpen=!wrap.classList.contains('open');
-    countries.forEach((o,k)=>{
+    const wrap=cases[i]._tab, willOpen=!wrap.classList.contains('open');
+    cases.forEach((o,k)=>{
       o._tab.classList.remove('open');
       o._tab.querySelector('.rank-item').setAttribute('aria-expanded','false');
       dots[k].classList.remove('active');
@@ -362,9 +299,8 @@
       dots[i].classList.add('active');
     }
   }
-  // Clicking a spectrum dot scrolls to its ranked row and flashes it.
   function openFromDot(i){
-    const wrap=countries[i]._tab;
+    const wrap=cases[i]._tab;
     wrap.scrollIntoView({behavior:'smooth',block:'center'});
     wrap.classList.remove('flash'); void wrap.offsetWidth; wrap.classList.add('flash');
     setTimeout(()=>wrap.classList.remove('flash'),1300);
